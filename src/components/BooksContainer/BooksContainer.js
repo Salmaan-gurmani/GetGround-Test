@@ -7,11 +7,8 @@ class BooksContainer extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            payload: { page: 1, itemsPerPage: 20, filter: '' },
+            payload: { page: 1, itemsPerPage: 20 },
         };
-    }
-    componentDidMount() {
-        this.props.loadBooks(this.state.payload);
     }
     handleQueryParameters = state => {
         this.props.loadBooks(state);
