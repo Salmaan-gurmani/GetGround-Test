@@ -6,8 +6,8 @@ Books Library with Material-UI
 
 # Starter
 
-After cloning, checkout the `starter` branch
+After cloning, checkout the `from-main/books-library-interface` branch
 
 ```bash
-git checkout starter
+git checkout from-main/books-library-interface
 ```
