@@ -1,8 +1,8 @@
 import React from 'react';
-
 import Table from '../Table';
 import Adapter from 'enzyme-adapter-react-16';
 import { shallow, configure } from 'enzyme';
+
 jest.mock('react', () => ({
     ...jest.requireActual('react'),
     useEffect: jest.fn(),
