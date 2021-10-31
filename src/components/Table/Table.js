@@ -22,11 +22,17 @@ const USER_PATH = '/user';
 
 const useStyles = makeStyles(theme => ({
     table: {
-        minWidth: 1500,
+        minWidth: 1200,
+        backgroundColor: 'lightgrey',
     },
     backdrop: {
         zIndex: theme.zIndex.drawer + 1,
         color: '#fff',
+    },
+    searchBar: {
+        borderWidth: 2,
+        borderBlockColor: 'red',
+        backgroundColor: 'orange',
     },
 }));
 
@@ -63,6 +69,7 @@ export default function BooksLibrary({
                     value={searched}
                     onChange={searched => setSearched(searched)}
                     onCancelSearch={() => setSearched('')}
+                    className={classes.searchBar}
                 />
                 <Backdrop className={classes.backdrop} open={isLoading}>
                     <CircularProgress color="inherit" />
