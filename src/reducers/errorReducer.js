@@ -7,7 +7,6 @@ const errorReducer = (state = null, action) => {
         case BOOKS.LOAD:
         case BOOKS.LOAD_SUCCESS:
             return null;
-
         default:
             return state;
     }

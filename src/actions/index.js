@@ -15,9 +15,4 @@ const setError = error => ({
     error,
 });
 
-const setCount = count => ({
-    type: BOOKS.SET_COUNT,
-    count,
-});
-
-export { loadBooks, setBooks, setError, setCount };
+export { loadBooks, setBooks, setError };

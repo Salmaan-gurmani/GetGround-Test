@@ -8,7 +8,6 @@ const loadingReducer = (state = false, action) => {
             return false;
         case BOOKS.LOAD_FAIL:
             return false;
-
         default:
             return state;
     }
