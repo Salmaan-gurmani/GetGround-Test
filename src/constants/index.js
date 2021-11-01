@@ -1,0 +1,7 @@
+const BOOKS = {
+    LOAD: 'BOOKS_LOAD',
+    LOAD_SUCCESS: 'BOOKS_LOAD_SUCCESS',
+    LOAD_FAIL: 'BOOKS_LOAD_FAIL'
+};
+
+export { BOOKS };

@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<PaginationItems /> should render PaginationItems with default values 1`] = `ShallowWrapper {}`;
+
+exports[`<Table /> should render TableComponent with default values 1`] = `ShallowWrapper {}`;
+
+exports[`<Table /> should render TableComponent with loading 1`] = `ShallowWrapper {}`;
