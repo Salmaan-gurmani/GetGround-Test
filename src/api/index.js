@@ -1,7 +1,6 @@
 const URL = `http://nyx.vima.ekt.gr:3000/api/books`;
 
 const fetchBooks = async (page, itemsPerPage, filters) => {
-    // console.log('page:', page, itemsPerPage, filters);
     const jsonData = {
         page,
         itemsPerPage,
@@ -10,7 +9,6 @@ const fetchBooks = async (page, itemsPerPage, filters) => {
                 filters: [{ type: 'all', values: [filters] }],
             }),
     };
-    // console.log('jsonPage:', jsonData);
     const response = await fetch(`${URL}`, {
         method: 'POST',
         headers: {

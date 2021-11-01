@@ -4,10 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import BooksContainer from './components/BooksContainer';
 
 import configureStore from './store';
-import { configure } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
 
-configure({ adapter: new Adapter() });
 const store = configureStore();
 
 class App extends Component {

@@ -3,10 +3,6 @@ import Table, { PaginationItems } from '../BooksLibrary';
 import Adapter from 'enzyme-adapter-react-16';
 import { shallow, configure } from 'enzyme';
 
-jest.mock('react', () => ({
-    ...jest.requireActual('react'),
-    useEffect: jest.fn(),
-}));
 configure({ adapter: new Adapter() });
 const defaultPropsTableComponent = {
     loading: false,
@@ -47,6 +43,10 @@ jest.mock('react-router-dom', () => ({
     useParams: () => ({
         pageNumber: 2,
     }),
+}));
+jest.mock('react', () => ({
+    ...jest.requireActual('react'),
+    useEffect: jest.fn(),
 }));
 
 describe('<Table />', () => {
