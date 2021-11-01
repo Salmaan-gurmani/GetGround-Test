@@ -63,7 +63,7 @@ test('should load and handle books in case of success', async () => {
     expect(dispatchedActions).toContainEqual(setBooks(mockedBooks));
 });
 
-test('should handle image load errors in case of failure', async () => {
+test('should handle books load errors in case of failure', async () => {
     const dispatchedActions = [];
 
     // we simulate an error by rejecting the promise
