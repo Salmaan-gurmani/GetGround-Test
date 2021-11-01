@@ -1,5 +1,5 @@
 import React from 'react';
-import Table from '../Table';
+import Table, { PaginationItems } from '../BooksLibrary';
 import Adapter from 'enzyme-adapter-react-16';
 import { shallow, configure } from 'enzyme';
 
@@ -56,6 +56,23 @@ describe('<Table />', () => {
     });
     it('should render TableComponent with loading', () => {
         const wrapper = shallow(<Table {...loadingEnabledProps} />);
+        expect(wrapper).toMatchSnapshot();
+    });
+});
+describe('<PaginationItems />', () => {
+    const item = {
+        type: 'page',
+        page: 2,
+        selected: false,
+        disabled: false,
+        color: 'primary',
+        'aria-label': 'Go to page 2',
+        shape: 'rounded',
+        size: 'medium',
+        variant: 'text',
+    };
+    it('should render PaginationItems with default values', () => {
+        const wrapper = shallow(<PaginationItems item={item} />);
         expect(wrapper).toMatchSnapshot();
     });
 });

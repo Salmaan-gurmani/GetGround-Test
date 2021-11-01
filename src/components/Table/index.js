@@ -1,3 +1,3 @@
-import Table from './Table';
+import BooksLibrary from './BooksLibrary';
 
-export default Table;
+export default BooksLibrary;

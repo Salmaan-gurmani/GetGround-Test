@@ -19,7 +19,7 @@ class App extends Component {
                         <Route exact path="/" component={BooksContainer} />
                         <Route
                             exact
-                            path="/user/:pageNumber"
+                            path="/page/:pageNumber"
                             component={BooksContainer}
                         />
                     </Switch>

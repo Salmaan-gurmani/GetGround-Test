@@ -18,7 +18,7 @@ import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import Backdrop from '@material-ui/core/Backdrop';
 import CircularProgress from '@material-ui/core/CircularProgress';
-const USER_PATH = '/user';
+const USER_PATH = '/page';
 
 const useStyles = makeStyles(theme => ({
     table: {
@@ -36,20 +36,32 @@ const useStyles = makeStyles(theme => ({
     },
 }));
 
+export const PaginationItems = item => {
+    return (
+        <PaginationItem
+            type={'start-ellipsis'}
+            component={Link}
+            selected
+            to={`${USER_PATH}/${item.page}`}
+            {...item}
+        />
+    );
+};
+
 export default function BooksLibrary({
     data,
     handleQueryParameters,
     isLoading,
 }) {
     const { pageNumber } = useParams();
-    const [page, setPage] = useState(pageNumber ? pageNumber : 1);
+    const [page, setPage] = useState(pageNumber);
     const [rowsPerPage, setRowsPerPage] = useState(20);
     const [searched, setSearched] = useState('');
     const classes = useStyles();
 
     useEffect(() => {
         const queryParameters = {
-            page: Number(page),
+            page: page ? Number(page) : 1,
             itemsPerPage: rowsPerPage,
             filter: searched,
         };
@@ -174,15 +186,7 @@ export default function BooksLibrary({
                         showLastButton
                         boundaryCount={2}
                         onChange={handleChangePagination}
-                        renderItem={item => (
-                            <PaginationItem
-                                type={'start-ellipsis'}
-                                component={Link}
-                                selected
-                                to={`${USER_PATH}/${item.page}`}
-                                {...item}
-                            />
-                        )}
+                        renderItem={item => PaginationItems(item)}
                     />
                 </Box>
             </Paper>
